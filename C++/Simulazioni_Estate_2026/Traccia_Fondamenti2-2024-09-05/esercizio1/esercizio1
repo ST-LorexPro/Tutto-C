@@ -1,0 +1,28 @@
+int main(){
+	int* matricola = new int[6]{2,6,6,1,3,8};
+
+	// 1. La seguente istruzione è corretta? Se sì, cosa stampa? Altrimenti, perché?
+	cout << matricola->back() << endl;
+	no, non esiste nessun metodo back() per matricola.
+	
+	// 2. La seguente istruzione è corretta? Se sì, cosa stampa? Altrimenti, perché?
+	int x = matricola[3];    //crea una variabile x con dentro 1
+	matricola[3] = 8;    // cambio il valore in posizione 3 di matricola. Da 1 diventa 8
+	cout << x << “ “ << matricola[3] << endl; // stampa 1 8
+	int& p = matricola[3]; //creo una reference a matricola[3]
+
+	//si sono corrette e stampa 1 8
+	
+	// 3. La seguente istruzione è corretta? Se sì, cosa stampa? Altrimenti, perché?
+	cout << *p << endl; //erratto errore di compilazione p non è un puntatore
+	int* nuova = matricola; //creo un puntatore che punta a matricola[0] (2)
+	//no crea un errore di compilazione per via della stampa
+	
+	// 4. Qual è il modo corretto di gestire la memoria dinamica istanziata nel main?
+	Argomentare.
+	// A: delete nuova; delete[] matricola;
+	// B: delete nuova;
+	// C: delete[] matricola; //il metodo corretto è questo per deallocare la memoria dinamica utilizzata, poiche matricola è l'unica memoria dinamica che è stata allocata.
+	// D: La risposta corretta non è tra le precedenti
+	
+}
